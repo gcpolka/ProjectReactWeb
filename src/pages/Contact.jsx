@@ -1,24 +1,24 @@
 import React , {useState} from "react";
 import MainLayout from "../layouts/MainLayout";
-import ProductService from "../services/ProductService";
+import ContactService from "../services/ContactService"
 import { useNavigate } from "react-router-dom";
 import swal from "sweetalert";
 
-const NewProduct = () => {
+const Contact = () => {
   let navigate = useNavigate();
-  let [product,setProduct]= useState({});
+  let [contact,setContact]= useState({});
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    setProduct({ ...product, [name]: value });
+    setContact({ ...contact, [name]: value });
   };
- const saveProduct =(e) =>{
+ const saveContact =(e) =>{
   e.preventDefault();
-  ProductService.create(product)
+  ContactService.createContact(contact)
   .then((res)=>{
     swal({
       icon: "success",
-      text: "เพิ่มข้อมูลสำเร็จ",
+      text: "ส่งข้อความสำเร็จ",
       title: "Success"
     });
     navigate("/product")
@@ -34,11 +34,11 @@ const NewProduct = () => {
 
   return (
     <MainLayout>
-      <h1 className="mt-3">Add Product</h1>
+      <h1 className="mt-3">Contact</h1>
       <hr />
       <div className="row">
         <div className="col-md-8 offset-md-2">
-          <form onSubmit={saveProduct}>
+          <form onSubmit={saveContact}>
             <div className="mb-3 row">
               <label htmlFor="inputName" className="col-4 col-form-label">
                 Name
@@ -56,77 +56,49 @@ const NewProduct = () => {
             </div>
             <div className="mb-3 row">
               <label htmlFor="inputName" className="col-4 col-form-label">
-                Price
+                Email
               </label>
               <div className="col-8">
                 <input
                   type="text"
                   className="form-control"
-                  name="price"
-                  id="price"
-                  placeholder="Price"
+                  name="emailc"
+                  id="emailc"
+                  placeholder="Email"
                   onChange={handleInputChange}
                 />
               </div>
             </div>
             <div className="mb-3 row">
               <label htmlFor="inputName" className="col-4 col-form-label">
-                Category
+                Message
               </label>
               <div className="col-8">
                 <input
                   type="text"
-                  className="form-control"
-                  name="category"
-                  id="category"
-                  placeholder="Category"
+                  className="form-control-message"
+                  name="messagec"
+                  id="messagec"
+                  placeholder="Message"
                   onChange={handleInputChange}
                 />
               </div>
             </div>
-            <div className="mb-3 row">
-              <label htmlFor="inputName" className="col-4 col-form-label">
-                Size
-              </label>
-              <div className="col-8">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="sizeshoe"
-                  id="sizeshoe"
-                  placeholder="Size"
-                  onChange={handleInputChange}
-                />
-              </div>
-            </div>
-            <div className="mb-3 row">
-              <label htmlFor="inputName" className="col-4 col-form-label">
-                Image
-              </label>
-              <div className="col-8">
-                <input
-                  type="text"
-                  className="form-control"
-                  name="imageShoe"
-                  id="imageShoe"
-                  placeholder="Image"
-                  onChange={handleInputChange}
-                />
-              </div>
-            </div>
+            
             <div className="mb-3 row">
               <div className="offset-sm-4 col-sm-8">
-                <button type="submit" className="btn btn-primary">
-                  Save
+                <button type="submit" className="btn btn-primary" onClick={saveContact}>
+                  
+                  Send
                 </button>
-                <br /><br /><br /><br /><br /><br /><br /><br />
               </div>
             </div>
           </form>
+          <br /><br /><br /><br /><br /><br /><br /><br />
+       
         </div>
-        
       </div>
     </MainLayout>
   );
 };
-export default NewProduct;
+export default Contact;

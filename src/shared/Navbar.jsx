@@ -1,60 +1,81 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
+
+
+
 const Navbar = () => {
+  
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-success">
-      <div className="container">
-        <NavLink className="navbar-brand" to="/">
-          Store
-        </NavLink>
-        <button
-          className="navbar-toggler d-lg-none"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#collapsibleNavId"
-          aria-controls="collapsibleNavId"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="collapsibleNavId">
-          <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
+    <>
+    
+    <nav>
+      <nav>
+        <div className="nav-container">
+           <a href="/">
+            <img src="images/ada.png" alt="" className="logo" />
+           </a>
+            <div className="nav-profile">
+           
             <li className="nav-item">
               <NavLink className="nav-link active" to="/" aria-current="page">
-                Home <span className="visually-hidden">(current)</span>
+                | Home |<span className="visually-hidden">(current)</span>
               </NavLink>
             </li>
             <li className="nav-item">
               <NavLink className="nav-link" to="/product">
-                Product
+               | Product |
               </NavLink>
             </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="dropdownId"
-                data-bs-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Other
-              </a>
-              <div className="dropdown-menu" aria-labelledby="dropdownId">
-                <a className="dropdown-item" href="#">
-                  Action 1
-                </a>
-                <a className="dropdown-item" href="#">
-                  Action 2
-                </a>
-              </div>
-            </li>
-          </ul>
+            
+          
+            </div>
         </div>
-      </div>
+      </nav>
     </nav>
+    <div className="main-menu">
+     
+          
+        
+        <a href="/Product" className="main-menu-content">
+          <button  class="btn-1">
+            <img src="images/product-return.png" className="icon-nav" />
+            PRODUCT
+          </button>
+        </a>
+        <a href="/Productlift" className="main-menu-content">
+          <button  class="btn-1">
+          <img src="images/product-return.png" className="icon-nav" />
+            LIFTSTYLE
+          </button>
+        </a>
+        <a href="/Productrun" className="main-menu-content">
+          <button  class="btn-1">
+            <img src="images/product-return.png" className="icon-nav" />
+            RUNNER
+          </button>
+        </a>
+        <a href="/Productgym" className="main-menu-content">
+          <button  class="btn-1">
+            <img src="images/product-return.png" className="icon-nav" />
+            GYM & TRAINING
+          </button>
+        </a>
+        <a href="/Contact" className="main-menu-content">
+          <button  class="btn-1">
+            <img src="images/mg.png" className="icon-nav" />
+            CONTACT
+          </button>
+        </a>
+
+        
+        
+        
+    </div>
+
+    
+    </>
   );
 };
 
 export default Navbar;
+

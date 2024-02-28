@@ -4,7 +4,12 @@ import MainLayout from '../layouts/MainLayout';
 const Home = () => {
   return (
     <MainLayout>
-        <h1 className="mt-3">Home</h1>
+        <hr /><hr />
+        <img src="images/running.jpg" alt="" className='billcord' />
+
+        <hr /><br /><br /><br />
+        <img src="images/cononly.png" alt="" className='billcord'  />
+
         <hr />
     </MainLayout>
   )

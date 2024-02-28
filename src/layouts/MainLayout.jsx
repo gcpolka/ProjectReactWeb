@@ -1,15 +1,23 @@
-import React from 'react'
-import Navbar from '../shared/Navbar';
+import React from "react";
+import Navbar from "../shared/Navbar";
 
-const MainLayout = ({children}) => {
+const MainLayout = ({ children }) => {
   return (
     <>
-        <Navbar/>
-        <div className="container">
-            {children}
-        </div>
-    </>
-  )
-}
+      <Navbar />
+      <div className="container">
+        {children}
+      </div>
 
-export default MainLayout
+      
+
+      <footer>
+
+        <p>&copy; Phawida W. & Natthakit W. </p>
+
+      </footer>
+    </>
+  );
+};
+
+export default MainLayout;

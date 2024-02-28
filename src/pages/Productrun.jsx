@@ -5,12 +5,12 @@ import ProductService from "../services/ProductService";
 import logo from "../assets/react.svg";
 import swal from "sweetalert";
 
-const Product = () => {
+const Productlift = () => {
   let navigate = useNavigate();
   const [products,setProducts]=useState([]);
 
   const fetchProducts = () => {
-    ProductService.getAll()
+    ProductService.getrun()
       .then((res)=>{
         console.log(res.data.data)
         setProducts(res.data.data)
@@ -88,4 +88,4 @@ const ProductCard = (props) => {
     </>
   );
 };
-export default Product;
+export default Productlift;
